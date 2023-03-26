@@ -24,5 +24,10 @@ streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
 
-streamlit.text(fruityvice_response.json())
+#streamlit.text(fruityvice_response.json())
+
+# write your own comment -what does the next line do? Normalize semi-structured JSON data into a flat table
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# write your own comment - what does this do? Return fruityvice_normalized as a dataframe
+streamlit.dataframe(fruityvice_normalized)
 
